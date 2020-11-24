@@ -3,9 +3,11 @@ package br.edu.uniritter.canoas.poo.jogo.view;
 import br.edu.uniritter.canoas.poo.jogo.model.Jogador;
 
 import java.util.InputMismatchException;
+import java.util.Observable;
+import java.util.Observer;
 import java.util.Scanner;
 
-public class JogoView {
+public class JogoView implements Observer {
 
     public static int intQtdJogadores(int min, int max) {
         System.out.println("quantos jogadores teremos ?");
@@ -29,9 +31,12 @@ public class JogoView {
 
 
     }
+
     public static void mostraJogadorAtual(Jogador jog) {
+
         System.out.println("Agora é a vez de "+jog.getNome());
     }
+
     public static void continuar() {
         Scanner scanner = new Scanner(System.in);
         System.out.println("pressione enter para continuar");
@@ -39,5 +44,12 @@ public class JogoView {
 
 
 
+    }
+
+    @Override
+    public void update(Observable o, Object arg) {
+        System.out.println("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@");
+        System.out.println("   "+((Jogador)o).getNome()+" "+((Jogador)o).getPosicaoAtual());
+        System.out.println("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@");
     }
 }

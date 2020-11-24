@@ -4,7 +4,7 @@ import br.edu.uniritter.canoas.poo.jogo.view.TabuleiroView;
 
 public class Main {
     public static void main(String[] args) {
-        JogoController.iniciarJogo();
+        JogoController.getInstance().iniciarJogo();
         /*
         Dado dado = new Dado();
 

@@ -16,6 +16,6 @@ public class Teste {
             }
         }
         */
-        JogoController.iniciarJogo();
+        JogoController.getInstance().iniciarJogo();
     }
 }
