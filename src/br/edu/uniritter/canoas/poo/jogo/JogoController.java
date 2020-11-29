@@ -7,6 +7,7 @@ import br.edu.uniritter.canoas.poo.jogo.view.TabuleiroView;
 import java.util.Observable;
 import java.util.Observer;
 
+@SuppressWarnings("deprecation")
 public class JogoController implements Observer{
 
     private static JogoController instancia;
@@ -18,6 +19,14 @@ public class JogoController implements Observer{
     private TabuleiroView tbv;
     private JogoView jgv;
     private RegraDoJogo regra;
+
+	private Observable o;
+
+	private Observable o2;
+
+	private Object arg;
+
+	private Jogador a;
 
 
     private JogoController() {
@@ -51,7 +60,8 @@ public class JogoController implements Observer{
             jogadorAtual = 0;
         }
     }
-    public void registrarJogadores() {
+    @SuppressWarnings("deprecation")
+	public void registrarJogadores() {
         for (int i = 1; i <= qtdJogadores; i++) {
             String n = JogoView.InformeJogador(i);
             try {
@@ -81,7 +91,7 @@ public class JogoController implements Observer{
 
             tab.addJogador(new Jogador("Jean1"));
             tab.addJogador(new Jogador("Jean2"));
-            Jogador a = null;
+            a = null;
             try {
                 a.getNome();
             } catch (NullPointerException e) {
@@ -111,13 +121,16 @@ public class JogoController implements Observer{
 
     @Override
     public void update(Observable o, Object arg) {
-        /*
+        o2 = o;
+		this.o = o;
+		this.arg = arg;
+		
         Jogador jog = (Jogador)o;
         if (jog.getPosicaoAtual() > tabuleiro.getQtdCasas()) {
             finalizado = true;
             System.out.println(jog.getNome()+" ganhou!!!");
         }
-         */
+         
         if (regra.alguemGanhou(tabuleiro)) {
             finalizado = true;
             System.out.println(regra.quemGanhou().getNome()+" ganhou!!!");

@@ -52,4 +52,7 @@ public class JogoView implements Observer {
         System.out.println("   "+((Jogador)o).getNome()+" "+((Jogador)o).getPosicaoAtual());
         System.out.println("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@");
     }
+	public static void main(String[] args) {
+		fim
+	}
 }

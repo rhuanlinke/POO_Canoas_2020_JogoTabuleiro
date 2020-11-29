@@ -3,37 +3,19 @@ import br.edu.uniritter.canoas.poo.jogo.model.*;
 import br.edu.uniritter.canoas.poo.jogo.view.TabuleiroView;
 
 public class Main {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws MuitosJogadoresException {
         JogoController.getInstance().iniciarJogo();
-        /*
+        
         Dado dado = new Dado();
 
 
         Tabuleiro tab = new Tabuleiro(50, 20, 20);
 
-        //int pos = -1;
-        Jogador jog1 = new Jogador("Jogador número 1");
-        Jogador jog2 = new Jogador("Jogador número 2");
-        try {
-            tab.addJogador(jog1);
-            tab.addJogador(jog2);
-
-        } catch (MuitosJogadoresException e) {
-            e.printStackTrace();
-        }
-        jog1.avanca(dado.jogar());
-        jog2.avanca(dado.jogar());
-
-        TabuleiroView.showSituacaoAtual(tab);
-/*        for(int i = 0; i < 50; i ++) {
-            System.out.println(tab.getCasa(i));
-        }
-
         int pos = -1;
         Jogador jog1 = new Jogador("Jogador número 1");
         Jogador jog2 = new Jogador("Jogador número 2");
-        //tab.addJogador(jog1);
-        //tab.addJogador(jog2);
+        tab.addJogador(jog1);
+        tab.addJogador(jog2);
         for(int i = 0; i < 10; i++) {
             jog1.avanca(dado.jogar());
             TabuleiroView.showSituacaoAtual(tab);
@@ -53,7 +35,25 @@ public class Main {
 
             System.out.println(tab.getCasa(pos));
         }
-*/
+        /*
+        int pos = -1;
+        Jogador jog1 = new Jogador("Jogador número 1");
+        Jogador jog2 = new Jogador("Jogador número 2");
+        try {
+            tab.addJogador(jog1);
+            tab.addJogador(jog2);
+
+        } catch (MuitosJogadoresException e) {
+            e.printStackTrace();
+        }
+        jog1.avanca(dado.jogar());
+        jog2.avanca(dado.jogar());
+
+        TabuleiroView.showSituacaoAtual(tab);
+        for(int i = 0; i < 50; i ++) {
+            System.out.println(tab.getCasa(i));
+        }
+	*/
 
     }
 }

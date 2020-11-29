@@ -13,7 +13,7 @@ public class TabuleiroView implements Observer {
     public TabuleiroView(Tabuleiro tab) {
         this.tabuleiro = tab;
     }
-    public void showSituacaoAtual(Tabuleiro tab){
+    public static void showSituacaoAtual(Tabuleiro tab){
         for (int i = 0; i < tab.getQtdCasas(); i++) {
             //if (tab.getCasaOcupada(i) != null) {
             //    System.out.println("casa "+i+": "+tab.getCasaOcupada(i)+" ->"+tab.getJogadoresCasa(i));
